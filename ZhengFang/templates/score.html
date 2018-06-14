@@ -1,0 +1,26 @@
+<div>
+    <div>
+        <table class="table table-responsive table-striped score-table">
+            <thead>
+                <tr>
+                    <td>课程名称</td>
+                    <td>补考成绩</td>
+                    <td>重修成绩</td>
+                    <td>绩点</td>
+                    <td>成绩</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in info.score.data %}
+            <tr>
+                <td>{{ item.kcmc }}</td>
+                <td>{{ item.bkcj }}</td>
+                <td>{{ item.cxcj }}</td>
+                <td>{{ item.jd }}</td>
+                <td>{{ item.cj }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

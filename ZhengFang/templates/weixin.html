@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}微信{% endblock %}
+{% block css %}
+<style type="text/css">
+    body{
+        height:100%;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container wx-content">
+    <div class="mx-auto wx-logo">
+        <img class="center-block" src="{% static 'jzassist_qrcode.jpg' %}">
+        <h4 class="text-center">吉珠小助手lite</h4>
+    </div>
+    <hr>
+    <div class="text-center">
+        <p>为了能更加方便的使用吉珠小助手，微信订阅号 <strong>吉珠小助手lite</strong> 就承载这样的使命诞生啦！</p>
+        <p>不过由于是个人公众号，限制比较多，所以体验不是那么好。功能也有限。</p>
+        <p>如果在使用的过程中遇到什么问题，可以通过公众号里面的留言反馈给我，谢谢！</p>
+    </div>
+    <hr>
+    <div style="margin-top:20px;">
+        <strong><del>faked</del> Version log</strong>
+        <ul>
+            <li>微信公众号正式上线。<span class="float-right text-muted">2017-2-21</span></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

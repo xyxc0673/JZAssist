@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}关于{% endblock %}
+{% block js %}
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jza"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+{% endblock %}
+{% block content %}
+<div class="container" style="background-color:white;">
+    <article>
+        <h1 class="text-center">About</h1>
+        <p><strong>起源</strong></p>
+        <p>
+            大概1年前就想做一个跟正方教务系统助手，想用来<del>抢课</del>啥的。由于技术不行以及拖延症晚期，一直没有做出来。
+            不过在写python命令行版本的JZ-Schoolwork-Assist时，跟着一位大神<a href="http://xuhongxu.com/">xuhongxu</a>学了很多。
+            很感谢他在github上开源的项目。
+        </p>
+        <p>
+            后来呢，在解决不了<del>抢课</del>的问题后，就没管了。但是想着不装什么课程表就不能好好地查一下成绩，看一下课表。
+            想自己动手造一个网页版的轮子，方便查询体验十分糟糕的教务系统中的信息。但是要输入验证码，体验不是很好。也就没怎么打算去写。
+            直到这个寒假，无意中看到有关验证码识别的教程后，跟着写了一个。发现识别率还算不错。所以，就应用上这个模块来写这个网站。
+            在写这个网站的时候，学习了<a href="http://zhangweide.cn/">zhwei</a>的github中一个项目，所以，如果你看过他写的，会觉得两个网站有点像。
+            最后，经过我的<del>不懈努力</del>，这个beta版的吉珠小助手就这样诞生了。
+        </p>
+        <p><strong>关于名称</strong></p>
+        <p>
+            我<del>竭尽</del>了脑细胞也没想到什么好名字，在微信上能用的名字也被注册了。所以，就用回了最开始的项目命名JZAssist的中文名称。
+        </p>
+        <p><strong>关于域名</strong></p>
+        <p>
+            jza是JZAssist的首字母缩写。其实之前是先注册了bythesea.cn这个域名的，但是跟微信公众号的名字对不上，所以就又注册了jza.one这个域名。
+        </p>
+        <p><strong>没有设计</strong></p>
+        <p>
+            由于我不太擅长美工啥的，所以你现在看到的，都是用bootstrap基本组件搭出来的，<del>十分清爽</del>。
+        </p>
+        <p><strong>建议或者吐槽</strong></p>
+        <p>那就在下面的留言板中给我留言吧。或者发邮件到我的邮箱。邮箱地址在文末。</p>
+        <p><strong>联系方式</strong></p>
+        <p><i class="fa fa-email"></i>Email: xyxc0673###gmail.com</p>
+        <p>为了防止爬虫抓取邮箱，麻烦自行将#换成@。</p>
+    </article>
+    <div class="ds-thread" data-thread-key="about" data-title="关于" data-url="http://jza.one/about/"></div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-center text-muted">
+            Powered by <a href="https://www.djangoproject.com/">Django</a> and <a href="http://getbootstrap.com/">BootStrap</a>.
+            Auth: xyxc. And there is no Copyright.
+        </p>
+    </div>
+</footer>
+{% endblock %}

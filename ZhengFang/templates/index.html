@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}首页{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+      <h1 class="display-3">Hello, world!</h1>
+      <p class="lead">吉珠小助手是集网站和微信公众号于一体的吉珠教务系统助手。</p>
+      <hr class="my-4">
+      <p>我们的目的是将时间从麻烦的操作体验中解放出来。</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/assist/login" role="button">Let's Go</a>
+      </p>
+    </div>
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">自适应的网站</h4>
+              <p class="card-text">优化小屏设备的体验</p>
+              <a href="/assist/login" class="btn btn-primary"><i class="fa fa-mobile" aria-hidden="true"></i> Let's Go</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">验证码识别模块</h4>
+                <p class="card-text">已累积识别 {{ captcha_ocr.total|default:"0"}} 次， 成功 {{ captcha_ocr.success|default:"0" }} 次。</p>
+                <a href="#" class="btn btn-primary"><i class="fa fa-support" aria-hidden="true"></i> Donate</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">微信订阅号</h4>
+                <p class="card-text">更加方便地查询教务系统信息</p>
+                <a href="/weixin/" class="btn btn-success"><i class="fa fa-wechat" aria-hidden="true"></i> Get it</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

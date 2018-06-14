@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}正方教务系统{% endblock %}
+{% block css %}
+{% endblock %}
+{% block js %}
+<script>
+	$(function(){
+		$("#mainTab a:first").tab("show")
+	})
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+{% include "controlPanel.html" %}
+
+</div>
+{% endblock %}

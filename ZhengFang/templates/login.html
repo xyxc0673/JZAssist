@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}正方教务系统{% endblock %}
+
+{% block css %}
+<style type="text/css">
+
+</style>
+{% endblock %}
+{% block js %}
+<script rel="script">
+    $(function(){
+        $('tooltip').tooltip();
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width:450px;">
+    <div class="login_area">
+    <form id="zf" name="zf" action="/assist/login/" method="post">
+    {% csrf_token %}
+        <div class="form-control non-border">
+        <div class="form-group login-title">
+        <h4 class="text-center">正方教务系统</h4>
+        </div>
+        {% for field in form %}
+        <div class="form-group">{{ field }}</div>
+        {% endfor %}
+        <div class="form-group">
+        <span>查询</span>
+        <label class="checkbox-inline"><input name="timetable" type="checkbox" checked> 当前学期课表 </label>
+        <label class="checkbox-inline"><input name="score" type="checkbox"> 在校学习成绩 </label>
+        <i class="fa fa-question-circle-o" data-target="#tips" data-toggle="collapse" data-placement="top" style="margin-left:10px;cursor:pointer"></i>
+        </div>
+        <div class="form-group btn-area">
+        <button class="btn btn-primary">提交</button>
+        <button class="btn" type="reset">重置</button>  
+        </div>
+        </div>
+    </form>
+    </div>
+    {% if error %}
+    <div class="alert alert-danger margin-top-ten">{{ error }}</div>
+    {% endif %}
+    <div class="collapse" id="tips">
+        <div class="alert alert-info margin-top-ten" role="alert">
+            <strong>Tips!</strong><br>①由于验证码识别模块并不能百分百正确识别每一个字符，免验证码登录可能需要花费较长时间。<br>②同时查询课表和成绩的话，数据呈现将会慢些。<br>③可以在稍后的页面中查询更多信息。
+        </div>
+    </div>
+</div>
+{% endblock %}

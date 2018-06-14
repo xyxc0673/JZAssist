@@ -1,0 +1,65 @@
+<div class="card">
+	<div class="card-block">
+		<div class="card-title"><h5>Control Center</h5></div>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+		  查询更多信息
+		</button>
+		<div class="btn-group">
+			<button class="btn btn-primary">分享课表</button>
+			<button class="btn btn-primary">生成ics文件</button>
+		</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  	<div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      	<div class="modal-header">
+			        	<h5 class="modal-title" id="exampleModalLabel">查询</h5>
+			        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          	<span aria-hidden="true">&times;</span>
+			        	</button>
+			      	</div>
+				    <form action="/assist/" method="post">
+				    {% csrf_token %}
+				      	<div class="modal-body">
+							<div class="form-group">
+								<select name="xn" class="form-control">
+										{% for option in years %}
+										<option value="{{ option }}" {% if forloop.last %}selected{% endif %}>{{ option }}</option>
+										{% endfor %}
+								</select>
+							</div>
+							<div class="">
+								<select name="xq" id="" class="form-control">
+									<option value="1" selected>1</option>
+									<option value="2">2</option>
+								</select>
+							</div>
+
+						</div>
+						<div class="modal-footer">
+								<button name="timetable" type="submit" class="btn btn-primary">查询课表</button>
+								<button name="score" type="submit" class="btn btn-primary">查询成绩</button>
+						</div>
+					</form>
+			    </div>
+		   </div>
+		</div>
+	</div>
+	<div id="mainTab" class="tabs">
+		<ul class="nav  nav-tabs" role="tablist">
+		{% for key, value in info.items %}
+		<li role="presentation" class="nav-item"><a class="nav-link" href="#{{ key }}" aria-controls="{{ key }}" role="tab" data-toggle="tab">{{ value.name }}</a></li>
+		{% endfor %}
+		</ul>
+		<div class="tab-content">
+			{% if "timetable" in info %}
+			<div role="tabpanel" class="tab-pane" id="timetable">
+				<h5 class="float-right">显示 第{{ info.timetable.weeks }}周 课表</h5>
+				{% include "timetable.html" %}
+			</div>
+			{% endif %}
+			{% if "score" in info %}
+			<div role="tabpanel" class="tab-pane" id="score">{% include "score.html" %}</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

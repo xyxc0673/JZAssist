@@ -1,0 +1,98 @@
+body > .container{
+    padding-top:80px;
+}
+.footer{
+    padding-top:22px;
+    height:50px;
+    font-weight:20px;
+}
+.margin-top-ten{
+    margin-top:10px;
+}
+.login_area{
+    padding:1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+non-border{
+    border:0px;
+}
+
+.btn-area{
+    text-align:center;
+    word-spacing:10px;
+}
+.login-title{
+    margin-top:1rem;
+    margin-bottom:1.7rem;
+}
+
+body{
+    background-color:#EDEDED;
+    overflow: auto !important;
+    padding-right:0px !important;
+}
+.tabs{
+    background-color:white;
+    border-radius: .25rem;
+    margin-top:15px;
+    margin-bottom:15px;
+
+}
+.tabs ul{
+
+}
+.tabs ul li a:hover{
+    background-color:#eee;
+
+}
+.tabs ul li a:focus{
+    background-color:#eee;
+
+}
+@media (max-width:767px){
+.timetable{
+    font-size:12px;
+}
+}
+.timetable{
+    font-size:14px;
+    overflow:auto;
+    display:block
+}
+.timetable td{
+    padding:5px;
+    vertical-align:middle;
+    height:30px;
+    line-height:1.7;
+}
+@media (max-width:767px){
+.score-table td{
+    font-size:13px;
+    }
+}
+.score-table td{
+    width:20%;
+}
+thead td{
+    white-space:nowrap;
+}
+
+article p{
+    font-size:15px;
+    font-weight:400;
+}
+
+.wx-content{
+    background-color:white;
+    min-height:100%;
+}
+
+.wx-logo{
+     width:258px;
+}

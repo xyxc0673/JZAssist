@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} · 吉珠小助手</title>
+    {% include "includes/head.html" %}
+    {% block css %}{% endblock %}
+    {% block js %}{% endblock %}
+</head>
+<body style="height:100%;">
+{% include "includes/navbar.html" %}
+{% block content %}{% endblock %}
+</body>
+</html>

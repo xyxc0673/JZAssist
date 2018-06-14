@@ -1,0 +1,30 @@
+    <table class="table table-sm table-bordered table-responsive timetable">
+        <thead>
+        <tr>
+            <td align="Center" rowspan="1"></td><td align="Center" width="14%">星期一</td><td align="Center" width="14%">星期二</td><td align="Center" width="14%">星期三</td><td align="Center" width="14%">星期四</td><td align="Center" width="14%">星期五</td><td class="noprint" align="Center" width="14%">星期六</td><td class="noprint" align="Center" width="14%">星期日</td>
+        </tr>
+        </thead>
+        {% for tr in info.timetable.data %}
+        <tr>
+            <td align="Center">{{ forloop.counter }}</td>
+            {% if not forloop.counter|divisibleby:"2" %}
+                {% for td in tr %}
+                {% if td %}
+                    {% for item in td %}
+                        {% if item %}
+                            <td align="Center" rowspan="2">
+                            {{ item.name }}<br>
+                            {{ item.location }}
+                            </td>
+                        {% else %}
+                            {% if item != 0 %}
+                                <td rowspan="2"></td>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>

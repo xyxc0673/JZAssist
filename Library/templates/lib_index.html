@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}图书馆{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-sm table-responsive timetable">
+        <thead>
+        <tr>
+            <td>条码号</td>
+            <td>题名/责任者</td>
+            <td>借阅日期</td>
+            <td>应还日期</td>
+            <td>续借量</td>
+            <td>馆藏地</td>
+            <td>附件</td>
+            <td>续借</td>
+        </tr>
+        </thead>
+        {% for book in remind_books %}
+        <tr>
+            {% for item in book %}
+                <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
